@@ -1,3 +1,6 @@
+BeneDict==0.3.2
+jmespath==1.0.1
+pathspec==0.11.0
 robotframework>=4.1.2
 ruamel.base>=1.0.0
 ruamel.yaml>=0.17.20
