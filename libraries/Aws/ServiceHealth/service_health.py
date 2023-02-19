@@ -31,8 +31,8 @@ GLOBAL_SERVICES = [  #List from https://d3s31nlw3sm5l8.cloudfront.net/services.j
 
 
 class ServiceHealth:
-    def get_event_json(self) -> dict:
-        url = "https://history-events-eu-west-1-prod.s3.amazonaws.com/historyevents.json"
+    def get_event_json(self, event_json_location: str) -> dict:
+        url = "https://history-events-{}-prod.s3.amazonaws.com/historyevents.json".format(event_json_location)
 
         headers = {
             "Accept": "application/json, text/plain, */*",
@@ -42,6 +42,9 @@ class ServiceHealth:
             "Referer": "https://health.aws.amazon.com/",
         }
         response = requests.request("GET", url, headers=headers, timeout=10)
+        if response.status_code != 200:
+            raise ValueError("Incident json file not found")
+
         return yaml.safe_load(response.text)
 
     def services_filter(self, payload, within_time, regions_list, services_list, enable_global) -> list[str]:
