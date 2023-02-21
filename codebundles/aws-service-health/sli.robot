@@ -38,7 +38,7 @@ Get Number of AWS Incidents Effecting My Workspace
     ...    enum=[ap-northeast-1, eu-west-1, us-east-1, us-west-2] 
     ...    default=us-east-1
 
-    ${history}=    Aws.ServiceHealth.get_event_json    ${INCIDENTS_JSON_BUCKET_LOCATION}
+    ${history}=    Aws.ServiceHealth.get_events    ${INCIDENTS_JSON_BUCKET_LOCATION}
     ${filtered}=    Aws.ServiceHealth.services_filter    ${history}    ${WITHIN_TIME}    ${PRODUCTS}    ${REGIONS}    ${INCLUDE_GLOBAL}
 
     Log    ${filtered}

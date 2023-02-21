@@ -31,7 +31,7 @@ GLOBAL_SERVICES = [  #List from https://d3s31nlw3sm5l8.cloudfront.net/services.j
 
 
 class ServiceHealth:
-    def get_event_json(self, event_json_location: str) -> dict:
+    def get_events(self, event_json_location: str) -> dict:
         url = "https://history-events-{}-prod.s3.amazonaws.com/historyevents.json".format(event_json_location)
 
         headers = {
