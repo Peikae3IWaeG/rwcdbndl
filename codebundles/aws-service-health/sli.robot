@@ -31,12 +31,12 @@ Get Number of AWS Incidents Effecting My Workspace
    ...    pattern=\w*
    ...    default=YES
    ...    enum=[YES,NO]
-   # RW.Core.Import User Variable    INCIDENTS_JSON_BUCKET_LOCATION
-   # ...    type=string
-   # ...    description=Set a region for S3 bucket containing incidents info. Only regions listed in the dropdown menu are supported.
-   # ...    pattern=\w*
-   # ...    enum=[ap-northeast-1, eu-west-1, us-east-1, us-west-2]
-   # ...    default=us-east-1
+   RW.Core.Import User Variable    INCIDENTS_JSON_BUCKET_LOCATION
+   ...    type=string
+   ...    description=Set a region for S3 bucket containing incidents info. Only regions listed in the dropdown menu are supported.
+   ...    pattern=\w*
+   ...    enum=[ap-northeast-1, eu-west-1, us-east-1, us-west-2]
+   ...    default=us-east-1
 
    ${history}=    Aws.ServiceHealth.Get Events    ${INCIDENTS_JSON_BUCKET_LOCATION}
    ${filtered}=    Aws.ServiceHealth.Services Filter    ${history}    ${WITHIN_TIME}    ${PRODUCTS}    ${REGIONS}    ${INCLUDE_GLOBAL}
