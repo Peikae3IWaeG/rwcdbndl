@@ -21,7 +21,7 @@ Get Number of AWS Incidents Effecting My Workspace
    ...    example=sns,eks,ecs
    RW.Core.Import User Variable    REGIONS
    ...    type=string
-   ...    description=Which region to monitor for incidents. Accepts CSV. For further region value examples refer to regions at https://d3s31nlw3sm5l8.cloudfront.net/services.json
+   ...    description=Which region to monitor for incidents. Accepts CSV. For further region value examples refer to regions at https://d3s31nlw3sm5l8.cloudfront.net/services.json or use `aws ec2 describe-regions --query 'Regions[*].RegionName'` command.
    ...    pattern=\w*
    ...    default=us-east-1
    ...    example=us-west-1,eu-west-2
