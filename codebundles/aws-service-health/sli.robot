@@ -7,18 +7,18 @@ Library    RW.Core
 Library    Aws.ServiceHealth
 *** Tasks ***
 Get Number of AWS Incidents Effecting My Workspace
-   # RW.Core.Import User Variable    WITHIN_TIME
-   # ...    type=string
-   # ...    pattern=((\d+?)d)?((\d+?)h)?((\d+?)m)?((\d+?)s)?
-   # ...    description=How far back in incident history to check, in the format "1d1h15m", with possible unit values being 'd' representing days, 'h' representing hours, 'm' representing minutes, and 's' representing seconds.
-   # ...    example=30m
-   # ...    default=15m
-   # RW.Core.Import User Variable    PRODUCTS
-   # ...    type=string
-   # ...    description=Which product(s) to monitor for incidents. Accepts CSV. For further examples refer to the product names at https://d3s31nlw3sm5l8.cloudfront.net/services.json
-   # ...    pattern=\w*
-   # ...    default=ec2
-   # ...    example=sns,eks,ecs
+   RW.Core.Import User Variable    WITHIN_TIME
+   ...    type=string
+   ...    pattern=((\d+?)d)?((\d+?)h)?((\d+?)m)?((\d+?)s)?
+   ...    description=How far back in incident history to check, in the format "1d1h15m", with possible unit values being 'd' representing days, 'h' representing hours, 'm' representing minutes, and 's' representing seconds.
+   ...    example=30m
+   ...    default=15m
+   RW.Core.Import User Variable    PRODUCTS
+   ...    type=string
+   ...    description=Which product(s) to monitor for incidents. Accepts CSV. For further examples refer to the product names at https://d3s31nlw3sm5l8.cloudfront.net/services.json
+   ...    pattern=\w*
+   ...    default=ec2
+   ...    example=sns,eks,ecs
    # RW.Core.Import User Variable    REGIONS
    # ...    type=string
    # ...    description=Which region to monitor for incidents. Accepts CSV. For further region value examples refer to regions at https://d3s31nlw3sm5l8.cloudfront.net/services.json
