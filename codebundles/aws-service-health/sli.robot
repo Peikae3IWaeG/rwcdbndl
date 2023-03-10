@@ -19,17 +19,18 @@ Get Number of AWS Incidents Effecting My Workspace
    ...    pattern=\w*
    ...    default=ec2
    ...    example=sns,eks,ecs
-   # RW.Core.Import User Variable    REGIONS
-   # ...    type=string
-   # ...    description=Which region to monitor for incidents. Accepts CSV. For further region value examples refer to regions at https://d3s31nlw3sm5l8.cloudfront.net/services.json
-   # ...    pattern=\w*
-   # ...    default=us-east-1
-   # ...    example=us-west-1,eu-west-2
-   # RW.Core.Import User Variable    INCLUDE_GLOBAL
-   # ...    type=bool
-   # ...    description=Monitor all non-regional AWS services as well
-   # ...    pattern=\w*
-   # ...    default=true
+   RW.Core.Import User Variable    REGIONS
+   ...    type=string
+   ...    description=Which region to monitor for incidents. Accepts CSV. For further region value examples refer to regions at https://d3s31nlw3sm5l8.cloudfront.net/services.json
+   ...    pattern=\w*
+   ...    default=us-east-1
+   ...    example=us-west-1,eu-west-2
+   RW.Core.Import User Variable    INCLUDE_GLOBAL
+   ...    type=string
+   ...    description=Monitor all non-regional AWS services as well
+   ...    pattern=\w*
+   ...    default=YES
+   ...    enum=[YES,NO]
    # RW.Core.Import User Variable    INCIDENTS_JSON_BUCKET_LOCATION
    # ...    type=string
    # ...    description=Set a region for S3 bucket containing incidents info. Only regions listed in the dropdown menu are supported.
